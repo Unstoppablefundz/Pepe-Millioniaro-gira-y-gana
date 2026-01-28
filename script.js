@@ -11,25 +11,21 @@ spinBtn.addEventListener('click', () => {
 
   isSpinning = true;
   spinBtn.disabled = true;
-  result.textContent = "Spinning... 🎰 Hold on!";
+  result.textContent = "Girando...";
 
-  // Add spinning class
   wheel.classList.add('spinning');
 
-  // Spin for 4 seconds → then reveal prize & go to form
   setTimeout(() => {
     wheel.classList.remove('spinning');
     
-    // Show prize message
-    result.innerHTML = "CONGRATULATIONS YOU WON 🎁 $30,500!<br>Redirecting to claim form...";
+    result.innerHTML = "¡Felicidades!<br>¡Ganaste $30,500!<br>Redirigiendo al formulario...";
 
-    // Wait 2 more seconds → then show form
     setTimeout(() => {
       gameSection.style.display = 'none';
       formSection.style.display = 'block';
       isSpinning = false;
-      spinBtn.disabled = false; // in case someone wants to go back
-    }, 2000);
+      spinBtn.disabled = false;
+    }, 1800);
 
-  }, 4000); // spin duration 4 seconds
+  }, 4000);
 });
