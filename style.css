@@ -172,3 +172,11 @@ button[type="submit"] {
   color: #000;
   font-weight: bold;
 }
+.spinning {
+  animation: spin 4s linear forwards;
+}
+
+@keyframes spin {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(1440deg); } /* 4 full turns = exciting */
+}
