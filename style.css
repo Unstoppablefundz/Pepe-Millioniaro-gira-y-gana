@@ -69,3 +69,12 @@ button:hover {
   margin-top: 40px;
   min-height: 40px;
 }
+.spinning {
+  animation: spin 4s linear infinite;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
