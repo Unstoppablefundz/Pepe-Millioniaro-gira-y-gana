@@ -1,26 +1,35 @@
-// This finds the wheel and the button in the page
-const wheel = document.querySelector('.wheel');
-const spinButton = document.getElementById('spin');
+const wheel = document.getElementById('wheel');
+const spinBtn = document.getElementById('spinBtn');
 const result = document.getElementById('result');
+const gameSection = document.getElementById('game-section');
+const formSection = document.getElementById('form-section');
 
 let isSpinning = false;
 
-// When someone clicks the button
-spinButton.addEventListener('click', () => {
-  
-  if (isSpinning) return;           // prevent clicking many times
+spinBtn.addEventListener('click', () => {
+  if (isSpinning) return;
 
   isSpinning = true;
-  result.textContent = "Spinning... 🎰";
+  spinBtn.disabled = true;
+  result.textContent = "Spinning... 🎰 Hold on!";
 
-  // Add the spinning class → starts animation
+  // Add spinning class
   wheel.classList.add('spinning');
 
-  // After 4 seconds → stop and show result
+  // Spin for 4 seconds → then reveal prize & go to form
   setTimeout(() => {
     wheel.classList.remove('spinning');
-    result.textContent = "You won... something! 🎉 (random prize coming soon)";
-    isSpinning = false;
-  }, 4000);   // 4000 ms = 4 seconds
+    
+    // Show prize message
+    result.innerHTML = "CONGRATULATIONS YOU WON 🎁 $30,500!<br>Redirecting to claim form...";
 
+    // Wait 2 more seconds → then show form
+    setTimeout(() => {
+      gameSection.style.display = 'none';
+      formSection.style.display = 'block';
+      isSpinning = false;
+      spinBtn.disabled = false; // in case someone wants to go back
+    }, 2000);
+
+  }, 4000); // spin duration 4 seconds
 });
